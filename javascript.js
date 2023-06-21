@@ -1,24 +1,41 @@
-console.log(getComputerChoice())
-
 let playerChoice = prompt('Enter your choice. Rock/Paper/Scissors.') 
 playerChoice = playerChoice.toLowerCase()
 
+let playerWin = 0
+let computerWin = 0
+let whoWon;
+
 for (let i = 0; i < 5; i++) {
-    console.log(oneRound())
+    oneRound(playerChoice,getComputerChoice)
 }
 
-function oneRound() {
-    computerSelection = getComputerChoice();
-    if (playerChoice === computerSelection) {
-        return "It is a tie!";
-    }  else if ( playerChoice === "paper" && computerSelection === "scissors") {
-        return " You have lost !"
-    } else if ( playerChoice === "scissors" && computerSelection === "rock") {
-        return " You have lost !"
-    } else if ( playerChoice === "rock" && computerSelection === "paper") {
-        return " You have lost !"
+winner(playerWin, computerWin)
+console.log(whoWon)
+
+function winner(playerWin, computerWin) {
+    if (playerWin > computerWin) {
+        whoWon = " You won !";
+    } else if (playerWin < computerWin) {
+        whoWon = " You ve lost !";
     } else {
-        return " You have won !!!"
+        whoWon = " It is a tie !";
+    }
+    return whoWon
+}
+
+
+function oneRound(playerChoice, getComputerChoice) {
+    console.log(getComputerChoice())
+    if (playerChoice === getComputerChoice()) {
+        return "It is a tie!";
+    }  else if ( playerChoice === "paper" && getComputerChoice() === "scissors") {
+        return computerWin++;
+    } else if ( playerChoice === "scissors" && getComputerChoice() === "rock") {
+        return computerWin++;
+    } else if ( playerChoice === "rock" && getComputerChoice() === "paper") {
+        return computerWin++;
+    } else {
+        return playerWin++;
     }
 }
 
