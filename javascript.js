@@ -25,7 +25,6 @@ function winner(playerWin, computerWin) {
 
 
 function oneRound(playerChoice, getComputerChoice) {
-    console.log(getComputerChoice())
     if (playerChoice === getComputerChoice()) {
         return "It is a tie!";
     }  else if ( playerChoice === "paper" && getComputerChoice() === "scissors") {
