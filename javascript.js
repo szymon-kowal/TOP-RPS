@@ -6,7 +6,7 @@ let computerWin = 0;
 let whoWon;
 
 const buttons = document.querySelectorAll('button');
-console.log(buttons)
+console.log(buttons) 
 
 const outputPlayer = document.querySelector('.p');
 const outputComputer = document.querySelector('.c');
