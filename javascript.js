@@ -1,8 +1,8 @@
 
 
-let playerWin = 0
+let playerWin = 0;
 
-let computerWin = 0
+let computerWin = 0;
 let whoWon;
 
 const buttons = document.querySelectorAll('button');
@@ -11,51 +11,34 @@ console.log(buttons)
 const outputPlayer = document.querySelector('.p');
 const outputComputer = document.querySelector('.c');
 const outputWinner = document.querySelector('.winner');
+const bodyElement = document.querySelector('body');
+
+// combine eventlistener with button clicking
+
+
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
+        let playerChoice;
         if (button.classList.contains('rock')) {
-            console.log("Rock button was clicked.");
-            let playerChoice = 'rock';
-            oneRound(playerChoice,getComputerChoice);
+            playerChoice = 'rock';
           } else if (button.classList.contains('paper')) {
-            console.log("Paper button was clicked.");
-            let playerChoice = 'paper';
-            oneRound(playerChoice,getComputerChoice);
+            playerChoice = 'paper';
           } else if (button.classList.contains('scissors')) {
-            console.log("Scissors button was clicked.");
-            let playerChoice = 'scissors';
-            oneRound(playerChoice,getComputerChoice);
+            playerChoice = 'scissors';
           } 
+          oneRound(playerChoice,getComputerChoice);
           outputComputer.textContent = `${computerWin}`;
           outputPlayer.textContent = `${playerWin}`;
-          outputWinner.textContent = `placeholder`;
-
-          // Need to keep the progress of game to the 5 wins and
-          // make the winner     
+          outputWinner.textContent = `placeholder`; 
+          // Display who won
+          if (playerWin == 5) {
+            bodyElement.innerHTML = '<h1>You won !</h1>';
+            } else if (computerWin == 5) {
+            bodyElement.innerHTML = '<h1>Computer won :C</h1>';
+            }
     })
 });
 
-if (playerWin = 5) {
-    
-}
-
-// let playerChoice = prompt('Enter your choice. Rock/Paper/Scissors.')
-// playerChoice = playerChoice.toLowerCase()
-// console.log("Button clicked:", button.textContent);
-// oneRound(playerChoice,getComputerChoice);
-// winner(playerWin, computerWin);
-// console.log(whoWon);
-
-function winner(playerWin, computerWin) {
-    if (playerWin > computerWin) {
-        whoWon = " You won !";
-    } else if (playerWin < computerWin) {
-        whoWon = " You ve lost !";
-    } else {
-        whoWon = " It is a tie !";
-    }
-    return whoWon
-}
 
 
 function oneRound(playerChoice, getComputerChoice) {
