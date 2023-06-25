@@ -1,16 +1,31 @@
-let playerChoice = prompt('Enter your choice. Rock/Paper/Scissors.') 
-playerChoice = playerChoice.toLowerCase()
+
 
 let playerWin = 0
+
 let computerWin = 0
 let whoWon;
 
-for (let i = 0; i < 5; i++) {
-    oneRound(playerChoice,getComputerChoice)
-}
+const buttons = document.querySelectorAll('button');
+console.log(buttons)
 
-winner(playerWin, computerWin)
-console.log(whoWon)
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (button.classList.contains('rock')) {
+            console.log("Rock button was clicked.");
+          } else if (button.classList.contains('paper')) {
+            console.log("Paper button was clicked.");
+          } else if (button.classList.contains('scissors')) {
+            console.log("Scissors button was clicked.");
+          }       
+    })
+});
+
+// let playerChoice = prompt('Enter your choice. Rock/Paper/Scissors.')
+// playerChoice = playerChoice.toLowerCase()
+// console.log("Button clicked:", button.textContent);
+// oneRound(playerChoice,getComputerChoice);
+// winner(playerWin, computerWin);
+// console.log(whoWon);
 
 function winner(playerWin, computerWin) {
     if (playerWin > computerWin) {
@@ -46,5 +61,5 @@ function getComputerChoice() {
         return "rock";
     } else {
         return "paper";
-    }  
+    }
 }
