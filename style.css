@@ -1,6 +1,9 @@
 #hidden {
     display: none;
 }
+#cont {
+    margin: 20px 0;
+}
 
 body{
     margin:0;
@@ -19,13 +22,17 @@ body{
     font-size: 24px;
     overflow: hidden;
     align-self: flex-start;
+    height:100%;
   }
   .content {
     margin-top: 50px;
     text-align: left;
     opacity: 0;
     animation: fade-in 3s linear forwards;
+    height:100%;
+    margin: 20px;
   }
+
   @keyframes blink {
     0% { opacity: 0; }
     50% { opacity: 1; }

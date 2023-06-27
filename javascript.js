@@ -16,7 +16,7 @@ function addText() {
     textElement.innerHTML += text.charAt(index);
     index++;
     if (index < text.length) {
-        setTimeout(addText, 3);
+        setTimeout(addText, 1);
     } else {
         blinking.innerHTML ="";
         setTimeout(addEnterText,1000);
@@ -28,7 +28,7 @@ function addEnterText() {
     textEnterElement.innerHTML += textEnter.charAt(index2);
     index2++;
     if (index2 < textEnter.length) {
-        setTimeout(addEnterText, 2);
+        setTimeout(addEnterText, 1);
     } 
 }
 
