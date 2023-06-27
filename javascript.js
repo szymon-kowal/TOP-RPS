@@ -40,8 +40,6 @@ buttons.forEach((button) => {
     })
 });
 
-
-
 function oneRound(playerChoice, getComputerChoice) {
     if (playerChoice === getComputerChoice()) {
         return "It is a tie!";
