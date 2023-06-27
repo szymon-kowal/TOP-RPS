@@ -1,7 +1,4 @@
-
-
 let playerWin = 0;
-
 let computerWin = 0;
 let whoWon;
 
@@ -65,3 +62,19 @@ function getComputerChoice() {
         return "paper";
     }
 }
+
+// The first page
+
+const textElement = document.getElementById("text");
+const text = "Slowly appearing text.";
+let index = 0;
+
+function addText() {
+  textElement.innerHTML += text.charAt(index);
+  index++;
+  if (index < text.length) {
+    setTimeout(addText, 100);
+  }
+}
+
+setTimeout(addText, 2000);
