@@ -9,17 +9,18 @@ body{
     height: 100%;
 }
 .overlay {
+    padding: 0 20px;
     background-color: black;
-    color: white;
+    color: rgb(11, 218, 11);
     font-family: monospace;
     font-size: 24px;
     overflow: hidden;
   }
   .content {
     margin-top: 50px;
-    text-align: center;
+    text-align: left;
     opacity: 0;
-    animation: fade-in 5s linear forwards;
+    animation: fade-in 3s linear forwards;
   }
   @keyframes blink {
     0% { opacity: 0; }
