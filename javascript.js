@@ -1,11 +1,8 @@
 let playerWin = 0;
-
 let computerWin = 0;
 let whoWon;
 
 const buttons = document.querySelectorAll('button');
-
-
 const outputPlayer = document.querySelector('.p');
 const outputComputer = document.querySelector('.c');
 const outputWinner = document.querySelector('.winner');
@@ -88,7 +85,8 @@ const blinking = document.getElementsByClassName('blink')[0];
 
 let index = 0;
 let index2 = 0;
-// Add tet slowly
+
+// Add text slowly
 function addText() {
     textElement.innerHTML += text.charAt(index);
     index++;
